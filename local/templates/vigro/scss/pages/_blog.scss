@@ -1,0 +1,163 @@
+.page_blog {
+	&__gallery {
+		&__item {
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 130%;
+			display: block;
+
+			img,
+			p {
+				display: block;
+			}
+
+			img {
+				object-fit: cover;
+				height: 265px;
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	.hero {
+		margin-bottom: 50px;
+		@include breakpoint(md) {
+			margin-bottom: 80px;
+		}
+
+        h1 {
+            max-width: 885px;
+            font-size: 25px;
+            line-height: 30px;
+            @include breakpoint(md) {
+                font-size: 50px;
+                line-height: 61px;
+            }
+        }
+
+		&--inner {
+            &:before {
+                left: 0;
+                width: 100%;
+            }
+        }
+	}
+
+	h2 {
+		font-size: 20px;
+		margin-bottom: 26px;
+		@include breakpoint(md) {
+			font-size: 30px;
+		}
+	}
+
+	article {
+		color: #575757;
+
+		h2 {
+			color: $c-dark;
+		}
+
+		img {
+			width: auto;
+			object-fit: contain;
+			object-position: center center;
+		}
+
+		> div {
+			margin-bottom: 50px;
+			@include breakpoint(md) {
+				margin-bottom: 80px;
+			}
+		}
+
+		div,
+		p,
+		img,
+        .btn {
+			margin-top: 26px;
+		}
+
+		ul {
+			margin-top: 8px;
+			list-style-type: disc;
+			li {
+				margin-left: 22px;
+			}
+		}
+
+		.contents {
+			ul {
+                margin-top: 0;
+				li {
+					font-weight: 700;
+					margin-top: 0;
+					&:not(:last-of-type) {
+						margin-bottom: 8px;
+					}
+				}
+
+				a {
+					color: #575757;
+					&:hover {
+						color: $c-blue;
+					}
+
+					&:active {
+						color: #575757;
+					}
+				}
+			}
+		}
+
+		.props {
+			p {
+				margin-top: 0;
+				&:not(:last-of-type) {
+					margin-bottom: 8px;
+				}
+			}
+		}
+
+		.recommend {
+			padding: 21px 14px;
+			background-color: #f1f1f1;
+			border-radius: 4px;
+			@include breakpoint(md) {
+				padding: 21px 33.5px;
+			}
+
+            a {
+                color: $c-blue;
+                font-weight: 700;
+                &:hover {
+                    color: #0189B5;
+                }
+            }
+		}
+	}
+
+	.blog_detail_faucets {
+		width: 100%;
+		margin: 0 -15px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: nowrap;
+
+		> .catalog_item {
+			margin: 0 15px;
+
+			img {
+				margin-top: unset;
+			}
+		}
+	}
+
+	.news {
+		margin-bottom: 50px;
+		@include breakpoint(md) {
+			margin-bottom: 121px;
+		}
+	}
+}

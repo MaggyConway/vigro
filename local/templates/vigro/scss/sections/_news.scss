@@ -1,0 +1,30 @@
+.news {
+	&__slider {
+        padding-bottom: 30px;
+		.slick-slide {
+			margin: 0 15px;
+		}
+
+		.slick-list {
+			margin: 0 -15px;
+		}
+
+		.slick-prev, .slick-next {
+			top: calc(50% - (103px / 2));
+		}
+
+		img {
+			margin-bottom: 15px;
+            border-radius: 4px;
+			@include breakpoint(sm) {
+				margin-bottom: 20px;
+			}
+		}
+
+		p {
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 130%;
+		}
+	}
+}

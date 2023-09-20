@@ -1,0 +1,1 @@
+<img src="<?=SITE_TEMPLATE_PATH?>/assets/images/about.png" alt="about_hero_image" />

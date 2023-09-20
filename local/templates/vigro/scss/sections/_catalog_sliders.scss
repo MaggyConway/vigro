@@ -1,0 +1,38 @@
+.catalog_sliders {
+	.tabs {
+		margin-bottom: 40px;
+	}
+
+	&__hits,
+	&__new,
+	.catalog_slider {
+		display: none;
+		margin: 0 -15px;
+
+		.slick-arrow { top: 45%; }
+
+		.slick-prev {
+			left: -5px;
+		}
+
+		.slick-next {
+			right: -5px;
+		}
+
+		.slick-slide {
+			cursor: pointer;
+		}
+
+		.catalog_item {
+			margin: 0 14px; 
+		}
+
+		&.show {
+			display: block;
+		}
+	}
+
+	// &__new {
+	// 	display: none;
+	// }
+}

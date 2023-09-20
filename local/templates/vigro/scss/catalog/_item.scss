@@ -1,0 +1,83 @@
+.catalog_item {
+	position: relative;
+	// display: block;
+	// padding: 0 14px 14px 21px;
+	&:before {
+		@include before_icon;
+		width: 100%;
+		height: calc(100% - 47px);
+		top: unset;
+		bottom: 0;
+		background: #f1f1f1;
+		border-radius: 4px;
+		z-index: -1;
+		transform: none;
+	}
+
+	// .card_title_block {
+	// 	padding: 0 14px 14px 21px;
+	// }
+
+	a:first-of-type {
+		display: block;
+	}
+
+	> a > img {
+		display: block;
+		margin-bottom: 20px;
+		width: 100%;
+		height: 153px;
+		max-height: 153px;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&__title {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 130%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 4px;
+		padding: 0 14px 0 21px;
+		min-height: 63px;
+
+		> .wish {
+			width: 25px;
+			min-width: 25px;
+			height: 23px;
+			display: block;
+			background: url(../assets/images/black_heart.svg) no-repeat center
+				center;
+			cursor: pointer;
+			transition: all .2s ease-in-out;
+
+			&.active {
+				background: url(../assets/images/blue_heart.svg) no-repeat center
+				center;
+			}
+		}
+	}
+
+	&__price {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 130%;
+		padding: 0 14px 14px 21px;
+	}
+
+	.item--sticker {
+		position: absolute;
+		font-size: 12px;
+		line-height: 130%;
+		right: 0;
+		top: 38px;
+		color: #fff;
+		background-color: $c-blue;
+		padding: 1px 5px;
+		border-radius: 2px;
+		z-index: 50;
+	}
+}

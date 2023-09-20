@@ -1,0 +1,107 @@
+.footer {
+	height: 121px;
+	// height: auto;
+	background-color: $c-dark;
+	color: #fff;
+    padding-top: 12px;
+    padding-bottom: 13px;
+
+	@include breakpoint(md) {
+		height: 255px;
+		padding-top: 37px;
+		padding-bottom: 14px;
+	}
+
+	> .container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+	}
+
+	.copyright {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		white-space: nowrap;
+		font-size: 14px;
+		line-height: 17px;
+
+		a {
+			color: $c-blue;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.row {
+		&:first-child {
+			// margin-bottom: 35px;
+			.col-lg-4,
+			.col-xl-4 {
+				column-count: 2;
+				// margin-right: 100px;
+				// max-width: 390px;
+				max-width: 290px;
+
+				@include breakpoint(md) {
+					max-width: fit-content;
+				}
+
+				@include breakpoint(lg) {
+					margin-right: 70px;
+				}
+			}
+
+			> ul {
+				li {
+					margin-bottom: 15px;
+				}
+
+				a {
+					font-weight: 500;
+					line-height: 140%;
+					font-size: 14px;
+					color: #fff;
+					opacity: 0.8;
+					white-space: nowrap;
+					&:hover {
+						color: $c-blue;
+					}
+
+					@include breakpoint(md) {
+						font-size: 16px;
+					}
+				}
+			}
+
+			h3 {
+				font-size: 25px;
+				line-height: 140%;
+				color: #f2f2f2;
+				margin-top: -10px;
+			}
+
+			a[href^='tel:'] {
+				padding-left: 25px;
+				&:before {
+					width: 15px;
+					height: 15px;
+					background: url(../assets/images/phone-white.svg) no-repeat
+						center center;
+				}
+
+				&:hover {
+					&:before {
+						width: 14.5px;
+						height: 14.5px;
+						background: url(../assets/images/phone_blue.svg) no-repeat
+							center center;
+					}
+				}
+			}
+		}
+	}
+}

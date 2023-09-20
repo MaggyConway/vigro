@@ -1,0 +1,85 @@
+version: '3.0'
+services:
+    # Веб
+    nginx2:
+        image: git.sntinvest.ru:5050/silab/nginx:1.0
+        container_name: nginx
+        build:
+            context: ./
+            dockerfile: ./.docker/build/nginx/Dockerfile
+        volumes:
+            - '.:/var/www'
+            - '../maxonor/bitrix:/var/www/bitrix'
+            # - '../maxonor/upload:/var/www/upload'
+            - ./.docker/build/nginx/conf/nginx.conf:/etc/nginx/nginx.conf:ro
+            - ./.logs/nginx:/var/log/nginx
+        ports:
+        - "80:80"
+        networks:
+            bitrix: 
+                ipv4_address: 10.0.80.10
+    # Приложение
+    bitrix2:
+        image: git.sntinvest.ru:5050/silab/bitrix:1.2
+        container_name: bitrix
+        volumes:
+            - '.:/var/www'
+            - '../maxonor/bitrix:/var/www/bitrix'
+            # - '../maxonor/upload:/var/www/upload'
+            - ./.docker/build/fpm/php7.4-fpm/conf/php.ini:/usr/local/etc/php/conf.d/app.ini:ro
+        ports:
+            - 9000:9000
+        networks:
+            bitrix: 
+                ipv4_address: 10.0.80.20
+    # Mysql Server
+    db2:
+        image: mysql:8.0
+        container_name: db
+        cap_add:
+           - SYS_NICE
+        restart: always
+        environment:
+           - MYSQL_DATABASE=${MYSQL_DATABASE}
+           - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
+           - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+        ports:
+           - '${MYSQL_PORT}:3306'
+        volumes:
+           - ./.docker/conf/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+           - mysql_bitrix_2_data:/var/lib/mysql
+        command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci 
+        networks:
+            bitrix: 
+                ipv4_address: 10.0.80.30
+    #Php My Admin
+    phpmyadmin:
+        image: phpmyadmin
+        container_name: pma
+        depends_on:
+            - db2
+        environment:
+            PMA_HOST: ${MYSQL_HOST}
+            PMA_PORT: ${MYSQL_PORT}
+            MAX_EXECUTION_TIME: 600
+            MEMORY_LIMIT: 512M
+            UPLOAD_LIMIT: 2048K
+        restart: always
+        ports:
+            - '8080:80'
+        links:
+            - db2
+        networks:
+            bitrix: 
+                ipv4_address: 10.0.80.40
+
+volumes:
+    mysql_bitrix_2_data:
+       driver: local
+networks:
+    bitrix:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 10.0.80.0/24
+                  gateway: 10.0.80.1

@@ -1,0 +1,162 @@
+.bx-filter,
+.catalog_section__filter {
+	// margin-right: 33px;
+	// max-width: 243px;
+	// width: 243px;
+	// min-width: 243px;
+
+	&-parameters-box {
+		margin-bottom: 40px;
+
+		&-title {
+			padding-bottom: 0 !important;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 18px !important;
+			line-height: 22px;
+		}
+
+		&-hint {
+			color: $c-dark !important;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border: none !important;
+
+			> .fa {
+				&:before {
+					font-size: 30px;
+				}
+			}
+		}
+
+		&-container {
+			padding: 0;
+		}
+	}
+
+	.chboxes {
+		margin: -14px 0;
+		width: 100%;
+	}
+
+	&-param-label {
+		padding: 0 !important;
+		margin: 14px 0;
+		display: block;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	&-input-checkbox {
+		> input {
+			display: none;
+		}
+
+		> span {
+			color: $c-dark;
+			font-size: 18px;
+			position: relative;
+			padding-left: 40px;
+			line-height: 22px;
+			// white-space: nowrap;
+
+			&:before {
+				@include before_icon;
+				width: 23px;
+				height: 23px;
+				border: 1px solid #c4c4c4;
+				border-radius: 2px;
+				background: url(../assets/images/accept.svg) no-repeat center center;
+				z-index: 50;
+				transition: all 0.2s ease-in-out;
+			}
+		}
+
+		> input:checked + span {
+			&:before {
+				background-color: $c-blue;
+				border-color: $c-blue;
+			}
+		}
+	}
+
+	&-block {
+		margin-top: 27px;
+	}
+
+	&__btns {
+		.bx-filter-parameters-box-container {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+
+			.btn:first-child {
+				margin-right: 16px;
+			}
+		}
+	}
+
+	&__range {
+		display: flex;
+		flex-direction: column;
+		
+		.bx-filter-block {
+			margin-top: 15px;
+		}
+
+		.bx-ui-slider-track-container {
+			padding: 0;
+			height: 12px;
+			margin: 0 0 13px;
+			position: relative;
+
+			.bx-ui-slider-track {
+				height: 2px;
+				background-color: $c-dark;
+			}
+
+			.bx-ui-slider-part {
+				display: none;
+				span {
+					display: none;
+				}
+			}
+
+			.bx-ui-slider-handle {
+				width: 12px;
+				height: 12px;
+				background-color: $c-dark;
+				border-radius: 50%;
+				top: -5px;
+				margin: 0;
+			}
+		}
+
+		.range_line {
+			width: 13px;
+			height: 1px;
+			background-color: $c-dark;
+			margin: 0 10px;
+		}
+
+		.range_input {
+			width: 75px;
+			height: 36px;
+			background-color: #f1f1f1;
+			border-radius: 5px;
+			padding: 0;
+
+			input {
+				@include input;
+				font-family: 'Montserrat', sans-serif;
+				padding: 10px;
+				background-color: #f1f1f1;
+				width: 100%;
+				max-width: 100%;
+				border: none;
+				font-weight: 400;
+				color: $c-dark;
+			}
+		}
+	}
+}

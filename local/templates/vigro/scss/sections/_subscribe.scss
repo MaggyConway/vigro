@@ -1,0 +1,48 @@
+.subscribe {
+	background-color: $c-blue;
+	padding: 78px 15px;
+
+	h2 {
+		margin-bottom: 20px;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 20px;
+		color: #fff;
+
+		@include breakpoint(sm) {
+			font-size: 28px;
+			line-height: 34px;
+		}
+
+		@include breakpoint(lg) {
+			margin-bottom: 0;
+			margin-right: 30px;
+			max-width: 350px;
+		}
+	}
+
+	&__form {
+		align-items: center;
+
+		input[type='email'] {
+			@include input;
+			@include input_light;
+			margin-bottom: 20px;
+			height: 45px;
+
+			@include breakpoint(sm) {
+				max-width: 250px;
+				margin-right: 30px;
+				margin-bottom: 0;
+			}
+
+			@include breakpoint(md) {
+				max-width: 350px;
+			}
+		}
+
+		.btn {
+			height: 45px;
+		}
+	}
+}

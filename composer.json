@@ -1,0 +1,27 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Sntinvest\\Integration\\": "local/modules/sntinvest.integration/lib/Sntinvest/Integration",
+            "Silab\\SiteCore\\": "local/modules/silab.sitecore/lib/"
+        }
+    },
+    "require": {
+        "php-amqplib/php-amqplib": "^3.2",
+        "php-di/php-di": "^6.4",
+        "symfony/console": "^5.4",
+        "monolog/monolog": "^2.8",
+        "guzzlehttp/guzzle": "^7.2",
+        "phpquery/phpquery": "^0.0.4",
+        "vlucas/phpdotenv": "^5.4",
+        "elasticsearch/elasticsearch": "^8.4",
+        "yandex-market/marketplace-php-partner": "^3.2"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.4"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}

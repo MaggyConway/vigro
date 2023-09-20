@@ -1,0 +1,69 @@
+.slick-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: $c-blue !important;
+    z-index: 500;
+    &:before {
+        @include before_icon;
+        background: url(../assets/images/right_arrow_white.svg) no-repeat
+            center center;
+        width: 9px;
+        height: 13px;
+        left: 52%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.slick-prev {
+    left: -20px;
+    &:before {
+        left: unset;
+        right: 52%;
+        transform: translate(50%, -50%) rotate(180deg);
+    }
+}
+
+.slick-next {
+    right: -20px;
+}
+
+.slick-dots {
+    bottom: -1px;
+    display: flex;
+    align-items: center;
+    margin: 0 -5px;
+    height: 4px;
+
+    &:before {
+        @include before_icon;
+        width: 100%;
+        height: 2px;
+        background-color: $border-color;
+        border-radius: 4px;
+        left: 5px;
+        top: 1px;
+        transform: none;
+    }
+
+    li {
+        width: 20%;
+        height: 4px;
+        background: $c-blue;
+        opacity: 0;
+        border-radius: 4px;
+        overflow: hidden;
+        transition: all .2s ease-in-out;
+
+        > button { display: none; }
+
+        &:hover {
+            opacity: .5;
+        }
+
+        &.slick-active {
+            opacity: 1;
+        }
+    }
+}

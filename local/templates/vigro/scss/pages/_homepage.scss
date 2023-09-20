@@ -1,0 +1,66 @@
+.homepage {
+	.hero {
+		// padding: 0;
+		@include breakpoint(lg) {
+			margin-bottom: 233px;
+		}
+
+		&:not(.control) {
+			margin-bottom: 100px;
+		}
+
+		h1 {
+			font-weight: 400;
+			font-size: 23px;
+			line-height: 28px;
+			margin-bottom: 18px;
+
+			b {
+				@include h1;
+				display: inline-block;
+				margin-bottom: 18px;
+
+				@include breakpoint(sm) {
+					margin-bottom: 0;
+				}
+			}
+
+			@include breakpoint(md) {
+				font-size: 32px;
+				line-height: 38px;
+				margin-bottom: 36px;
+			}
+
+			@include breakpoint(lg) {
+				font-size: 38px;
+				line-height: 46px;
+			}
+		}
+
+		&__filter {
+			max-width: 505px;
+			height: 45px;
+			border-radius: 4px;
+			align-items: center;
+			background-color: #fff;
+
+			button {
+				@include btn_primary;
+				margin-right: 6px;
+			}
+
+			.btn {
+				height: 33px;
+				padding: 8px 33px;
+			}
+
+			.disable {
+				cursor: not-allowed;
+				.active_label {
+					user-select: none;
+					pointer-events: none;
+				}
+			}
+		}
+	}
+}

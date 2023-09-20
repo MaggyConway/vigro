@@ -1,0 +1,92 @@
+.find_couple {
+	&__slider {
+		padding-bottom: 17px;
+		@include pin_card;
+		@include breakpoint(md) {
+			padding-bottom: 0;
+		}
+
+		.slick-slide {
+			margin: 0 8px;
+			@include breakpoint(sm) {
+				margin: 0 25px;
+			}
+
+			@include breakpoint(md) {
+				width: 550px;
+			}
+
+			@include breakpoint(lg) {
+				width: 805px;
+			}
+
+			img {
+				object-fit: cover;
+				border-radius: 4px;
+				height: 193px;
+
+				@media screen and (min-width: 400px) {
+					height: 270px;
+				}
+
+				@include breakpoint(sm) {
+					height: 300px;
+				}
+
+				@include breakpoint(lg) {
+					height: 488px;
+				}
+			}
+		}
+
+		.slick-list {
+			margin: 0 -8px;
+			@include breakpoint(sm) {
+				margin: 0;
+				overflow: visible;
+			}
+		}
+
+		.slick-next {
+			@include breakpoint(sm) {
+				right: unset;
+				left: 530px;
+			}
+			@include breakpoint(lg) {
+				left: 785px;
+			}
+		}
+
+		&__map:not(.slick-current) {
+			.find_couple__slider__map__item {
+				display: none;
+			}
+		}
+
+		&__tags {
+			display: flex;
+			align-items: center;
+			position: absolute;
+			left: 21px;
+			top: 18px;
+
+			> li {
+				background-color: $c-blue;
+				border-radius: 2px;
+				overflow: hidden;
+				padding: 1px 5px;
+
+				&:first-of-type {
+					margin-right: 15px;
+				}
+
+				a {
+					color: #fff;
+					font-weight: 400;
+					font-size: 14px;
+					line-height: 130%;
+				}
+			}
+		}
+	}
+}

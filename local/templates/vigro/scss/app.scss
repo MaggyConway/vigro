@@ -1,0 +1,44 @@
+@import '../assets/fonts/fonts';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/media';
+@import 'base/elements';
+
+@import 'components/header';
+@import 'components/footer';
+@import 'components/main_menu';
+@import 'components/slick';
+@import 'components/tabs';
+// @import 'components/forms';
+@import 'components/breadcrumbs';
+
+@import 'sections/hero';
+@import 'sections/kitchen_heart';
+@import 'sections/advantages';
+@import 'sections/ideas';
+@import 'sections/calc';
+@import 'sections/find_couple';
+@import 'sections/control';
+@import 'sections/catalog_sliders';
+@import 'sections/news';
+@import 'sections/subscribe';
+@import 'sections/faq';
+@import 'sections/vigro_today';
+@import 'sections/facts';
+
+@import 'pages/homepage';
+@import 'pages/partners';
+@import 'pages/contacts';
+@import 'pages/service_centres';
+@import 'pages/ideas';
+@import 'pages/blog';
+@import 'pages/wishlist';
+@import 'pages/100_control';
+
+@import 'catalog/item';
+@import 'catalog/element';
+@import 'catalog/section';
+@import 'catalog/filter';
+@import 'catalog/cart';
+@import 'catalog/order';
+@import 'catalog/wishlist';

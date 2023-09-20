@@ -1,0 +1,15 @@
+.page_contacts {
+	@include page;
+	margin-bottom: 98px;
+
+	p {
+		line-height: 160%;
+		a {
+			font-weight: 700;
+			padding: 0;
+			&:before {
+				display: none;
+			}
+		}
+	}
+}

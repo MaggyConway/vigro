@@ -1,0 +1,77 @@
+.page_wishlist {
+    margin-top: 60px;
+	.send_wishlist {
+        margin-bottom: 60px;
+
+		p {
+			margin-bottom: 25px;
+			font-weight: 500;
+			font-size: 24px;
+			line-height: 130%;
+		}
+
+		input,
+		button,
+		a,
+		p {
+			display: block;
+		}
+
+		input {
+            @include input;
+            height: 45px;
+            @include breakpoint(md) {
+                width: 350px;
+            }
+		}
+
+        .btn {
+            height: 45px;
+            margin: 20px 20px 20px 0;
+            @include breakpoint(md) {
+                margin: 0 30px;
+            }
+        }
+
+		#download_wishlist {
+            width: 48px;
+            height: 48px;
+            padding: 8px;
+            cursor: pointer;
+
+            svg path {
+                transition: all .2s ease-in-out;
+            }
+
+            &:hover {
+                svg path {
+                    fill: $c-blue;
+                }
+            }
+		}
+	}
+
+    .products_grid {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -7px 0;
+
+        @include breakpoint(ssm) {
+            margin: -30px -15px;
+        }
+
+        .catalog_item {
+            width: 100%;
+            margin: 7px 0;
+
+            @include breakpoint(ssm) {
+                width: calc(50% - 30px);
+                margin: 30px 15px;
+            }
+
+            @include breakpoint(lg) {
+                width: calc(25% - 30px);
+            }
+        }
+    }
+}

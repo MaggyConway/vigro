@@ -1,0 +1,66 @@
+.facts {
+	h2 {
+		margin-bottom: 30px;
+        position: relative;
+		@include breakpoint(md) {
+			margin-bottom: 40px;
+		}
+
+        strong {
+            display: block;
+            margin-top: 45px;
+            font-size: 30px;
+            @include breakpoint(md) {
+                font-size: 39px;
+            }
+        }
+
+		&:before {
+			@include before_icon;
+			width: 2px;
+			background-color: $c-blue;
+			opacity: .5;
+			transform: none;
+			top: 35px;
+			height: 55px;
+
+			@include breakpoint(md) {
+				top: 56px;
+				height: 73px;
+			}
+		}
+	}
+
+	> ul.row {
+		li {
+            > div {
+                border: 2px solid $border-color;
+                border-radius: 4px;
+                padding: 47px 23px 17px;
+                text-align: center;
+                height: 100%;
+            }
+
+            &:nth-of-type(1) {
+                position: relative;
+                p:first-of-type {
+                    position: absolute;
+                    top: 17px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
+            &:nth-of-type(3), &:nth-of-type(4) {
+                font-size: 14px;
+            }
+
+			span {
+				font-weight: 500;
+				font-size: 34px;
+				line-height: 41px;
+                margin: 4px 0;
+			}
+		}
+	}
+}

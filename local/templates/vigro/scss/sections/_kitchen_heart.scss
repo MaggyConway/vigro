@@ -1,0 +1,41 @@
+.kitchen_heart {
+	h2 {
+		margin-bottom: 20px;
+		position: relative;
+		line-height: 1;
+
+		&:before {
+			@include before_icon;
+			width: 2px;
+			background-color: $c-blue;
+			opacity: 0.5;
+			transform: none;
+			top: 200px;
+			height: 45px;
+            display: none;
+
+            @include breakpoint(lg) {
+                display: block;
+            }
+
+			@include breakpoint(xl) {
+				top: 200px;
+				height: 100px;
+			}
+
+			@include breakpoint(xxl) {
+				// top: 140px;
+				// height: 250px;
+				// top: 135px;
+				// height: 240px;
+				top: 115px;
+				height: 220px;
+			}
+		}
+
+		strong {
+			font-size: 38px;
+			line-height: 1;
+		}
+	}
+}

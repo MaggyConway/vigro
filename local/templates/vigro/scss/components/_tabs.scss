@@ -1,0 +1,21 @@
+.tabs {
+	display: flex;
+	align-items: center;
+
+	li {
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 30px;
+        color: #C4C4C4;
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+
+        &:not(:last-of-type) {
+            margin-right: 23px;
+        }
+
+		&.active {
+            color: $c-dark;
+		}
+	}
+}

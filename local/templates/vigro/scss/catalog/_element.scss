@@ -1,0 +1,296 @@
+.catalog_element {
+	h1,
+	&__price {
+		font-weight: 600;
+		font-size: 25px;
+		line-height: 130%;
+		color: $c-dark;
+		margin-bottom: 12px;
+
+		@include breakpoint(lg) {
+			font-weight: 700;
+			font-size: 36px;
+		}
+	}
+
+	&__price {
+		font-size: 30px;
+		@include breakpoint(lg) {
+			font-size: 40px;
+		}
+	}
+
+	h2 {
+		font-weight: 600;
+		font-size: 20px;
+		margin-bottom: 10px;
+		@include breakpoint(lg) {
+			margin-bottom: 30px;
+			font-size: 32px;
+		}
+	}
+
+	&__slider {
+		display: flex;
+		margin-bottom: 20px;
+		@include breakpoint(md) {
+			margin-bottom: 0;
+		}
+
+		.product-item-detail-slider-block {
+			width: 100%;
+		}
+	}
+
+	&__thumbnails {
+		margin: -10px 10px -10px -10px;
+		@include breakpoint(ssm) {
+			margin: -10px 30px -10px -10px;
+		}
+
+		li {
+			margin: 10px;
+			width: 65px;
+			height: 65px;
+			border-radius: 4px;
+			border: 2px solid white;
+			transition: all 0.2s ease-in-out;
+			cursor: pointer;
+
+			&:hover {
+				border-color: #f2f2f2;
+			}
+
+			&.selected {
+				border-color: $c-blue;
+			}
+		}
+	}
+
+	&__image {
+		height: 170px;
+
+		@include breakpoint(ssm) {
+			height: 200px;
+		}
+
+		@include breakpoint(lg) {
+			height: 250px;
+		}
+
+		@include breakpoint(xl) {
+			height: 400px;
+		}
+		// img {
+		//     width: auto;
+		//     height: auto;
+		// }
+	}
+
+	&__current_color,
+	&__props ul li {
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 130%;
+		margin-bottom: 14px;
+		span:first-of-type {
+			color: $c-input-gray;
+			margin-right: 10px;
+		}
+	}
+
+	&__choice_color {
+		display: flex;
+		max-width: calc((47px * 6) + (18px * 6));
+		flex-wrap: wrap;
+		margin: -9px -9px calc(35px - 9px);
+
+		li {
+			width: 47px;
+			height: 47px;
+			background: #f1f1f1;
+			border-radius: 4px;
+			border: 2px solid #f1f1f1;
+			transition: all 0.2s ease-in-out;
+			margin: 9px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+
+			img {
+				width: 20px;
+				height: 20px;
+			}
+
+			&.selected {
+				border-color: $c-blue;
+			}
+		}
+	}
+
+	&__btns {
+		display: flex;
+		align-items: center;
+
+		.btn_buy {
+			margin-right: 38px;
+		}
+
+		.btn_wish {
+			width: 36px;
+			height: 33px;
+			background: url(../assets/images/black_heart.svg) no-repeat center
+				center;
+			display: block;
+
+			&.active {
+				background: url(../assets/images/blue_heart.svg) no-repeat center
+					center;
+			}
+		}
+	}
+
+	&__description {
+		p {
+			max-width: 825px;
+		}
+	}
+
+	&__props {
+		ul {
+			width: 100%;
+
+			@include breakpoint(md) {
+			    width: 70%;
+			}
+
+			@include breakpoint(lg) {
+				margin: 0 -107px -18px;
+				column-count: 2;
+			}
+
+            @include breakpoint(xl) {
+				width: 90%;
+			}
+
+			@include breakpoint(xxl) {
+				width: 85%;
+			}
+
+			li {
+                width: 100%;
+				padding-right: 10px;
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-end;
+				position: relative;
+				white-space: nowrap;
+				$last_span_width: 190px;
+                
+                @include breakpoint(lg) {
+                    margin: 0 107px 18px;
+                }
+
+                @include breakpoint(xl) {
+                    width: 92%;
+				}
+
+				@include breakpoint(xxl) {
+                    width: 82%;
+				}
+                
+				&:after {
+					@include before_icon;
+					width: calc(100% - $last_span_width);
+					height: 1px;
+					background-color: $border-color;
+					top: unset;
+					transform: unset;
+					bottom: 4px;
+					z-index: 5;
+					z-index: -1;
+				}
+
+				span:first-of-type {
+					background-color: #fff;
+					margin-right: 2px;
+					padding-right: 1px;
+					display: block;
+				}
+
+				span:last-of-type {
+					background-color: #fff;
+					display: block;
+					padding-left: 1px;
+					width: $last_span_width;
+				}
+			}
+		}
+	}
+
+	&__video {
+		> .row > div {
+			position: relative;
+			
+            height: 300px;
+            @include breakpoint(md) {
+                height: 256px;
+            }
+            img {
+                object-fit: cover;
+                border-radius: 4px;
+                // @include breakpoint(md) {
+                //     object-fit: contain;
+                // }
+            }
+		}
+
+		button.play {
+			position: absolute;
+			cursor: pointer;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 40px;
+			height: 40px;
+			background: url(../assets/images/play.svg) no-repeat center center;
+		}
+	}
+
+	&__advantages {
+		h2 {
+			margin-bottom: 20px;
+		}
+
+		> .row > .col-xl-9 {
+			height: 350px;
+			@include breakpoint(xl) {
+				height: 470px;
+			}
+		}
+
+		img {
+			object-fit: cover;
+		}
+	}
+
+    &__anothers {
+        h2 {
+            margin-bottom: 50px;
+        }
+    }
+
+	.catalog_item {
+		margin: 15px;
+	}
+
+	.news {
+		position: relative;
+		.btn {
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}

@@ -1,0 +1,102 @@
+.ideas {
+	> .row {
+		> div {
+			height: 100%;
+			&:first-child {
+				height: 100%;
+				.ideas__image {
+					height: 350px;
+					@include breakpoint(lg) {
+						height: 417px;
+					}
+				}
+			}
+
+			&:not(:first-child) {
+				.ideas__image {
+					// height: unset;
+					height: 350px;
+					// @include breakpoint(md) {
+					// }
+					@include breakpoint(lg) {
+						height: 199px;
+					}
+				}
+			}
+		}
+	}
+
+	&__image {
+		position: relative;
+		display: block;
+		border-radius: 4px;
+		overflow: hidden;
+		width: 100%;
+		// max-height: 199px;
+		// height: auto;
+		
+		// &:nth-child(1) {
+		// 	height: 100%;
+		// }
+
+		&:before {
+			@include before_icon;
+			top: 0;
+			transform: none;
+			background: transparent;
+			width: 100%;
+			height: 100%;
+			z-index: 100;
+			transition: all .3s ease-in-out;
+		}
+
+		// @include breakpoint(md) {
+		// 	height: 350px;
+		// }
+
+		// @include breakpoint(lg) {
+		// 	height: unset;
+		// }
+
+		> img {
+			transition: all 0.3s ease-in-out;
+			border-radius: 4px;
+			object-fit: cover;
+			display: block;
+		}
+
+		> p {
+			position: absolute;
+			left: 19px;
+			bottom: 21px;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 22px;
+			color: #fff;
+			max-width: 350px;
+			display: block;
+			z-index: 150;
+
+			@include breakpoint(md) {
+				font-size: 28px;
+				line-height: 34px;
+				left: 27px;
+				bottom: 27px;
+			}
+		}
+
+		&:hover {
+			> img {
+				transform: scale(1.03);
+			}
+
+			> p {
+				color: $c-blue;
+			}
+
+			&:before {
+				background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+			}
+		}
+	}
+}

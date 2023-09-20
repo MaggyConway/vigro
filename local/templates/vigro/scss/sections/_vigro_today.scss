@@ -1,0 +1,19 @@
+.vigro_today {
+    h2 {
+        margin-bottom: 40px;
+        span {
+            padding-bottom: 8px;
+            border-bottom: 2px solid $c-blue;
+        }
+
+        @include breakpoint(md) {
+            margin-bottom: 48px;
+        }
+    }
+
+    p {
+        &:not(:last-of-type) {
+            margin-bottom: .5rem;
+        }
+    }
+}

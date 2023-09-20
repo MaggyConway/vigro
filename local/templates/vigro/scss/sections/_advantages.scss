@@ -1,0 +1,50 @@
+.advantages {
+	.row {
+		border-radius: 4px;
+		overflow: hidden;
+
+		> .col-lg-5 { // меньшая колонка в слайдере после -lg-
+			border-radius: 4px;
+			overflow: hidden;
+			padding: 10px 15px 20px;
+
+			@include breakpoint(md) {
+				padding: 30px;
+			}
+
+			@include breakpoint(lg) {
+				border: 2px solid $border-color;
+				border-left: none;
+			}
+		}
+	}
+
+	p {
+		line-height: 160%;
+		color: $c-light-gray;
+	}
+
+	img {
+		object-fit: cover;
+		border-radius: 4px;
+		max-height: 350px;
+		@include breakpoint(lg) {
+			max-height: 427px;
+		}
+	}
+
+	&__slider {
+		margin: 0 -15px !important;
+		@include breakpoint(sm) {
+			margin: 0 !important;
+		}
+	}
+
+	.slick-list {
+		border: 2px solid $border-color;
+		border-radius: 4px;
+		@include breakpoint(lg) {
+			border: none;
+		}
+	}
+}

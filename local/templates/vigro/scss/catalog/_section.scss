@@ -1,0 +1,148 @@
+.catalog_section {
+	&__list {
+		@include catalog_section_list;
+		margin-bottom: 32px;
+
+		@include breakpoint(md) {
+			margin-bottom: 60px;
+		}
+	}
+
+	&__list--mobile {
+		margin-bottom: 32px;
+		.pseudo_select {
+			@include gray_select;
+			max-width: 100%;
+			width: 100%;
+			padding: 12.5px 16px;
+		}
+	}
+
+	&__sort {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 36px;
+
+		@include breakpoint(md) {
+			margin-bottom: 60px;
+		}
+
+		> .col-auto:first-child {
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 130%;
+			color: $c-dark;
+			@include breakpoint(md) {
+				visibility: hidden;
+			}
+		}
+
+		.pseudo_select {
+			@include gray_select;
+			padding: 12.5px 8px;
+			width: 191px;
+			white-space: nowrap;
+
+			@include breakpoint(sm) {
+				width: 320px;
+				padding: 12.5px 16px;
+				white-space: unset;
+			}
+		}
+	}
+
+	&__grid {
+		// margin: -30px -29px -30px -14px;
+		margin: 0;
+		// display: flex;
+		// justify-content: flex-start;
+		// flex-wrap: wrap;
+
+		// @include breakpoint(ssm) {
+		// 	margin: -7px;
+		// }
+
+		// @include breakpoint(lg) {
+		// 	margin: -30px -14px;
+		// }
+
+		&.ajax_content {
+			width: 75%;
+		}
+
+		.catalog_item {
+			width: 100%;
+			max-width: 100%;
+			margin: 0;
+
+			// @include breakpoint(ssm) {
+			// 	// width: calc(50% - 14px);
+			// 	margin: 7px;
+			// }
+
+			// @include breakpoint(lg) {
+			// 	// width: calc(100% / 3 - 28px);
+			// 	margin: 30px 14px;
+			// }
+		}
+	}
+}
+
+.mobile_filter_header {
+	display: none;
+}
+
+.mobile_filter_panel {
+	display: block;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	background-color: #fff;
+	top: 0;
+	right: -100%;
+	z-index: 9999;
+	overflow: auto;
+	padding: 17px 15px;
+	transition: all .3s ease-in-out;
+
+	&--head {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		h2 {
+			font-size: 25px;
+			line-height: 130%;
+		}
+	}
+
+	.mobile_filter_header {
+		display: block;
+	}
+
+	&--close {
+		background: url(../assets/images/modal_cross.svg) no-repeat center center;
+		background-size: contain;
+		width: 17px;
+		height: 17px;
+		cursor: pointer;
+		transition: all .3s ease-in-out;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+
+		&:hover {
+			transform: rotate(180deg);
+		}
+	}
+
+	> .bx-filter {
+		width: 300px;
+		max-width: 100%;
+	}
+
+	&.show {
+		right: 0;
+	}
+}
